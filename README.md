@@ -2,6 +2,7 @@
 [![.NET CI](https://github.com/gefakra/FilestoreMicroS/actions/workflows/ci.yml/badge.svg)](https://github.com/gefakra/FilestoreMicroS/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/gefakra/FilestoreMicroS/branch/main/graph/badge.svg?)](https://codecov.io/gh/gefakra/FilestoreMicroS)
 [![Docker Image](https://img.shields.io/docker/pulls/gefakra/filestoremicros.svg)](https://hub.docker.com/r/gefakra/filestoremicros)
+---
 Микросервис для хранения **больших объёмов файлов** на ASP.NET Core с поддержкой дедупликации, сжатия и управления владельцами.
 
 ![Architecture](https://github.com/user-attachments/assets/22376a54-de4b-4ec4-ac20-79d260ffb32c)
