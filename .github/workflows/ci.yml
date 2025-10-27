@@ -32,7 +32,7 @@ jobs:
             /p:CollectCoverage=true \
             /p:CoverletOutputFormat=opencover \
             /p:CoverletOutput=./TestResults/coverage.xml \
-            /p:ExcludeByFile=**/Migrations/*.cs;**/Program.cs
+            /p:ExcludeByFile=**/Migrations/*.cs;**/Program.cs \
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
