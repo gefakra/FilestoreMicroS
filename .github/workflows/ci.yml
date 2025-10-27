@@ -15,20 +15,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Устанавливаем .NET SDK (версия 8.0)
+      # 2️⃣ Устанавливаем .NET 8 SDK
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
-      # 3️⃣ Восстанавливаем зависимости
+      # 3️⃣ Восстанавливаем зависимости из решения внутри папки FilestoreMicroS
       - name: Restore dependencies
-        run: dotnet restore ./FilestoreMicroS.sln
+        run: dotnet restore FilestoreMicroS/FilestoreMicroS.sln
 
-      # 4️⃣ Сборка проекта
+      # 4️⃣ Сборка решения
       - name: Build solution
-        run: dotnet build ./FilestoreMicroS.sln --configuration Release --no-restore
+        run: dotnet build FilestoreMicroS/FilestoreMicroS.sln --configuration Release --no-restore
 
-      # 5️⃣ Запуск тестов (из проекта FilestoreMicroS.Tests)
+      # 5️⃣ Запуск тестов
       - name: Run tests
-        run: dotnet test ./FilestoreMicroS.Tests/FilestoreMicroS.Tests.csproj --no-build --verbosity normal
+        run: dotnet test FilestoreMicroS.Tests/FilestoreMicroS.Tests.csproj --no-build --verbosity normal
