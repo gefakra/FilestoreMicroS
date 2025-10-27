@@ -37,7 +37,7 @@ jobs:
       - name: Build and push Docker image
         if: success()
         run: |
-          docker build -t gefakra/filestoremicros:latest .
+          docker build -t gefakra/filestoremicros:latest ./FilestoreMicroS
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           docker push gefakra/filestoremicros:latest
 
