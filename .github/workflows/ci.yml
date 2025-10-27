@@ -31,4 +31,4 @@ jobs:
 
       # 5️⃣ Запуск тестов
       - name: Run tests
-  run: dotnet test FilestoreMicroS.Tests/FilestoreMicroS.Tests.csproj --configuration Debug --logger "console;verbosity=detailed"
+        run: dotnet test FilestoreMicroS.Tests/FilestoreMicroS.Tests.csproj --configuration Debug --logger "console;verbosity=detailed"
