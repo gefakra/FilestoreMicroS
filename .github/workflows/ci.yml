@@ -32,3 +32,12 @@ jobs:
       # 5️⃣ Запуск тестов
       - name: Run tests
         run: dotnet test FilestoreMicroS.Tests/FilestoreMicroS.Tests.csproj --configuration Debug --logger "console;verbosity=detailed"
+
+          
+      - name: Build and push Docker image
+        if: success()
+        run: |
+          docker build -t gefakra/filestoremicros:latest .
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push gefakra/filestoremicros:latest
+
